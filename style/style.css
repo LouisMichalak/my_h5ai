@@ -1,0 +1,226 @@
+/*GENERAL MODIFS*/
+* {
+	font-family: 'Titillium Web', sans-serif;
+}
+li {
+	list-style: none;
+}
+a {
+	color: black;
+	text-decoration: none;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: linear-gradient(
+		to right,
+		#1dcaff,
+		#1dcaff 50%,
+		black 50%);
+	background-size: 200% 100%;
+	background-position: 100%;
+	transition: 0.2s ease-in-out;
+}
+a:hover {
+	background-position: 0;
+}
+.active > a{
+	font-weight: bold;
+}
+/*LEFT MENU MODIFS*/
+header
+{
+	position: fixed;
+	height: 100%;
+	width: 30%;
+	border-right: 4px solid black;
+	font-size: 25px;
+	overflow: auto;
+}
+header .title {
+	color: black;
+	position: fixed;
+	width: 30%;
+	text-align: center;
+}
+header .title h1 {
+	padding: 0;
+	margin: 0;
+}
+header > ul {
+	margin-top: 120px;
+}
+.subDir {
+	display: none;
+}
+.displayButton {
+	padding: 18px;
+	background-size: cover;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+.opennedDir > .displayButton {
+	background-image: url("../icons/icons8-dossier-ouvert-50.png");
+}
+.closedDir > .displayButton {
+	background-image: url("../icons/icons8-dossier-50.png");
+}
+.opennedDir > ul {
+	display: block;
+}
+.closedDir > ul {
+	display: none;
+}
+/*MAIN MENU*/
+.mainMenu {
+	position: absolute;
+	top: 20%;
+	right: 5%;
+	min-width: 60%;
+	min-height: 100%;
+	font-size: 1.6vw;
+}
+.sortBar {
+	display: flex;
+	justify-content: space-between;
+	color: gray;
+}
+.linksMainMenu a {
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	padding: 5px;
+	margin: 15px 0;
+}
+.linksMainMenu a:hover {
+	border-color: transparent;
+	box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.2);
+	transform: translate(-1%, -7%);
+}
+.linksMainMenu a > span, .sortBar > span {
+	width: 50%;
+}
+.linksMainMenu a span, .sortBar span {
+	display: flex;
+	justify-content: space-between;
+}
+.sortBar p {
+	cursor: pointer;
+}
+/*BREADCRUMB*/
+.nav {
+	z-index: 2;
+	position: fixed;
+	width: 65%;
+	display: flex;
+	align-items: center;
+	height: 10%;
+	right: 0;
+	top: 0;
+	overflow: auto;
+	overflow-y: hidden;
+
+}
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	height: 10%;
+	font-size: 1.5vw;
+	padding: 15px;
+	background-color: black;
+	border-radius: 5px;
+}
+.breadcrumb span {
+	padding: 7px;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+}
+.breadcrumb a {
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 4px;
+	-webkit-background-clip: padding-box;
+	-webkit-text-fill-color: black;
+	background-image: none;
+	background-color: white;
+
+	box-shadow: 0 0 0 2px white inset;
+}
+.breadcrumb a:hover {
+	-webkit-text-fill-color: #1dcaff;
+	transform: translate(0, 10%);
+}
+/*MOVE BTNS*/
+.moveButtons {
+	position: absolute;
+	width: 60%;
+	right: 5%;
+	top: 9%;
+	display: flex;
+}
+.before, .after {
+	margin: 10px 0;
+	border: none;
+	font-size: 3vw;
+	font-weight: bold;
+	background-color: transparent;
+	width: 50%;
+}
+.arrow {
+	position: absolute;
+	opacity: 0;
+	font-size: 6vw;
+	top: -2.85vw;
+	-webkit-transition: all 1s;
+	z-index: -1;
+}
+.before .titleBtn {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: linear-gradient(
+			to right,
+			black,
+			black 50%,
+			#1dcaff 50%);
+	background-size: 200% 100%;
+	background-position: 200%;
+	-webkit-transition: all 1s;
+	cursor: pointer;
+}
+.before .arrow {
+	right: 20%;
+}
+.before .titleBtn:hover {
+	-webkit-transition: all 1s;
+	-webkit-transition-timing-function: cubic-bezier(.6,-1.5,.5, -.5);
+	background-position: 0;
+}
+.before .titleBtn:hover + .arrow {
+	right: 85%;
+	opacity: 1;
+}
+.after .titleBtn {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: linear-gradient(
+			to right,
+			black,
+			black 50%,
+			#1dcaff 50%);
+	background-size: 200% 100%;
+	background-position: 200%;
+	-webkit-transition: all 1s;
+	cursor: pointer;
+}
+.after .arrow {
+	left: 20%;
+}
+.after .titleBtn:hover {
+	-webkit-transition: all 1s;
+	-webkit-transition-timing-function: cubic-bezier(.6,-1.5,.5, -.5);
+	background-position: 0;
+}
+.after .titleBtn:hover + .arrow {
+	opacity: 1;
+	left: 85%;
+}
