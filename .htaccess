@@ -1,2 +1,7 @@
-RewriteEngine On
-RewriteRule  'view/index.php' 'bite.foutre'
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+RewriteRule ^(.*.\/)$ /my_h5ai/index.php?folder=/$1
