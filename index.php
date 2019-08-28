@@ -1,6 +1,5 @@
 <?php
 include 'php/treeGen.php';
-$tree = new repos();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,6 +8,7 @@ $tree = new repos();
         <base href="/my_h5ai/">
         <link href="https://fonts.googleapis.com/css?family=Muli|Raleway|Titillium+Web&display=swap" rel="stylesheet">
         <link href="style/style.css" rel="stylesheet" type="text/css">
+		<link href="node_modules/file-icons-js/css/style.css" rel="stylesheet" type="text/css">
         <meta charset="utf-8">
     </head>
     <body>
@@ -30,6 +30,7 @@ $tree = new repos();
         </div>
         <div class="moveButtons">
             <button class="before"><span class="titleBtn">RETOUR</span><span class="arrow">←</span></button>
+			<span tabindex="0" id="searchBtn">🔍</span>
             <button class="after"><span class="titleBtn">AVANCER</span><span class="arrow">→</span></button>
         </div>
         <div class="mainMenu">
@@ -43,7 +44,11 @@ $tree = new repos();
             <div class="linksMainMenu">
             </div>
         </div>
+		<div class="modalDiv">
+		</div>
+	
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript" rel="script"></script>
-        <script src="script/script.js" type="text/javascript" rel="script"></script>
+        <script src="node_modules/file-icons-js/index.js" type="application/javascript" rel="script"></script>
+		<script src="script/script.js" type="text/javascript" rel="script"></script>
     </body>
 </html>

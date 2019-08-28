@@ -74,7 +74,7 @@ header > ul {
 	position: absolute;
 	top: 20%;
 	right: 5%;
-	min-width: 60%;
+	width: 60%;
 	min-height: 100%;
 	font-size: 1.6vw;
 }
@@ -99,7 +99,24 @@ header > ul {
 .linksMainMenu a > span, .sortBar > span {
 	width: 50%;
 }
-.linksMainMenu a span, .sortBar span {
+.linksMainMenu a span:nth-child(1) {
+	display: flex;
+	justify-content: flex-start;
+}
+.linksMainMenu a span:nth-child(2) {
+	display: flex;
+	justify-content: space-between;
+}
+.fileIcon.dir{
+	font-size: 32px !important;
+	font-weight: bold;
+	margin-right: 15px;
+}
+.fileIcon::before {
+	font-size: 32px !important;
+	margin-right: 15px;
+}
+.sortBar span {
 	display: flex;
 	justify-content: space-between;
 }
@@ -154,23 +171,28 @@ header > ul {
 .moveButtons {
 	position: absolute;
 	width: 60%;
+	height: 15%;
 	right: 5%;
 	top: 9%;
 	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 .before, .after {
 	margin: 10px 0;
 	border: none;
-	font-size: 3vw;
+	height: 80%;
+	font-size: 2.5vw;
 	font-weight: bold;
 	background-color: transparent;
-	width: 50%;
+	width: 20%;
+	outline-style: none;
 }
 .arrow {
 	position: absolute;
 	opacity: 0;
-	font-size: 6vw;
-	top: -2.85vw;
+	font-size: 4vw;
+	bottom: 14%;
 	-webkit-transition: all 1s;
 	z-index: -1;
 }
@@ -223,4 +245,136 @@ header > ul {
 .after .titleBtn:hover + .arrow {
 	opacity: 1;
 	left: 85%;
+}
+.researchSpan {
+	display: flex;
+}
+.searchInput {
+	border: none;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	outline-style: none;
+	margin-left: 10px;
+	width: 20vw;
+	height: 3vw;
+	position: absolute;
+	top: 50%;
+	left: 150%;
+	transform: translate(-50%, -50%);
+	font-size: 1.5vw;
+}
+#searchBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	width: 3vw;
+	height: 3vw;
+	outline: none;
+	font-size: 1.5vw;
+	cursor: pointer;
+	background: none;
+	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2), inset 0 0 0 3vw white;
+}
+.cross {
+	cursor: pointer;
+	position: absolute;
+	display: flex;
+	outline: none;
+	border: none;
+	border-radius: 100%;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2), inset 0 0 0 3vw white;
+	top: 50%;
+	left: 27%;
+	width: 3vw;
+	height: 3vw;
+	font-size: 1.5vw;
+	animation: bounceApparition 0.5s;
+	transform: translate(-50%, -50%);
+}
+#searchBtn:focus {
+	animation: animateSearchBtn 0.4s;
+}
+@keyframes animateSearchBtn {
+	0% {
+		box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2), inset 0 0 0 3vw white;
+		font-size: 1vw;
+		width: 5vw;
+		height: 5vw;
+	}
+	25% {
+		box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1vw #1dcaff;
+	}
+	50% {
+		font-size: 4vw;
+		width: 4vw;
+		height: 4vw;
+		box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.2), inset 0 0 0 1vw #1dcaff;
+	}
+	100% {
+		box-shadow: initial;
+	}
+}
+@keyframes bounceApparition {
+	0% {
+		width: 0vw;
+		height: 0vw;
+		font-size: 0vw;
+	}
+	25% {
+		width: 5vw;
+		height: 3vw;
+		font-size: 1.5vw;
+	}
+	50% {
+		width: 3vw;
+		height: 4vw;
+		font-size: 1.5vw;
+	}
+	100% {
+		width: 3vw;
+		height: 3vw;
+		font-size: 1.5vw;
+	}
+}
+@keyframes inputApparition {
+	0% {
+		left: 150%;
+	}
+	100% {
+		left: 52%;
+	}
+}
+/*MODAL*/
+::-webkit-scrollbar {
+    width: 10px;
+	height: 0;
+}
+.modal {
+	display: none;
+	position: fixed;
+	overflow-y: scroll;
+	max-width: 70%;
+	max-height: 80%;
+	background-color: white;
+	z-index: 20;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	border-radius: 10px;
+	box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.shadow {
+	position: fixed;
+	background-color: rgba(0,0,0,0.5);
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	z-index: 19;
 }
